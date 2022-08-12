@@ -1,12 +1,6 @@
 
 = INIT_GPG
 
-[source,shell script]
-----
-curl -sL https://github.com/cc332030/linux/raw/master/script/init-gpg/init-gpg.sh | sh
-
-----
-
 [source,yml]
 ----
 jobs:
@@ -14,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: init gnupg
-        run: ${{ secrets.INIT_GPG }}
+        run: curl -sL https://github.com/cc332030/gnupg/raw/main/script/init-gpg/init-gpg.sh | sh
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PASSWORD: ${{ secrets.GPG_PASSWORD }}
