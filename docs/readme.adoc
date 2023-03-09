@@ -38,3 +38,12 @@ gpg --edit-key 'key'
 > addkey
 
 ----
+
+== add user
+[source,shell]
+----
+gpg --list-secret-keys --keyid-format=long
+gpg --edit-key <key>
+> adduid
+> save
+----
